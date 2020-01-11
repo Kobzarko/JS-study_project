@@ -115,3 +115,5 @@ let ten = "10.7";
 // парсим в число
 console.log(parseInt(ten));
 console.log(parseFloat(ten));
+
+
