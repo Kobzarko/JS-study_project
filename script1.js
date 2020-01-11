@@ -55,7 +55,6 @@
 //   console.log(i);
 // }
 
-
 // functions
 
 // let fun = 20;
@@ -69,36 +68,50 @@
 // showFirstMessage("Hello World");
 // console.log(fun);
 
-
-function calc(a,b){
-	return(a+b);
+function calc(a, b) {
+  return a + b;
 }
 
-console.log(calc(3,4));
+console.log(calc(3, 4));
 
-console.log(calc(5,8));
+console.log(calc(5, 8));
 
-function retVar(){
-	let num = 50;
-	return num;
+function retVar() {
+  let num = 50;
+  return num;
 }
 
 let anotherNum = retVar();
-console.log(anotherNum); 
+console.log(anotherNum);
 
-// function expression присваивание футнкции в переменную 
-// не можем вызвать заранее 
+// function expression присваивание футнкции в переменную
+// не можем вызвать заранее
 // используем только после того как ее обьявили
 
-let calculater = function(c,d) {
-	return c*d;
-}
-
+let calculater = function(c, d) {
+  return c * d;
+};
 
 // стандарт ES6 стрелочная функция
 
-let func = (x,y) => x+y;
+let func = (x, y) => x + y;
 
-let str = "test" ;
+// свойства методов
+
+let str = "test";
 console.log(str.length);
 
+// Верхний регистр
+console.log(str.toUpperCase());
+// Нижний реристр
+console.log(str.toLowerCase());
+
+let ten = "10.7";
+
+// округляет превращая в число
+
+//console.log(Math.round(ten));
+
+// парсим в число
+console.log(parseInt(ten));
+console.log(parseFloat(ten));
