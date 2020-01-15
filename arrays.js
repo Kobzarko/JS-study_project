@@ -45,5 +45,129 @@
 // arr.reduce 
 
 
+let arr = [1,2,3,4,5,6,7,8,9,33];
 
 
+console.log("push "+arr);
+
+arr.push(17);
+
+console.log(arr);
+
+arr.pop();
+console.log("pop() - " +arr);
+
+arr.shift();
+console.log("shift() "+ arr);
+
+
+arr.unshift('33');
+console.log("unshift " + arr);
+
+for(let i =0 ; i<arr.length; i++)
+{
+	console.log(" index of arr " + arr[i]);
+}
+
+// loop foreach
+
+arr.forEach(function(item, i, mass)
+{
+	console.log( "i = "+i + ': '+ "index " + item + " (array : "+ mass + ')');
+});
+
+
+
+arr.forEach( function(element, index) {
+	// statements
+	console.log(index + " - " + element);
+});
+
+
+// Оператор расширения spread
+
+const myFunction = (w,x,y,z)=>{
+	console.log("sum of array");
+	console.log( w+x+y+z);
+}
+
+let args = [1,2,3];
+
+myFunction(...args, 4);
+
+var dateFields = [1970 , 0 , 1];
+
+var date = new Date(...dateFields);
+
+console.log(date);
+
+// Расширение в литералах массива 
+
+var mas = ["one", "two", "three"];
+console.log(mas);
+
+mas.splice(2, 0 , "three");
+mas.splice(3,0, "four");
+
+console.log(mas);
+
+// LOOP FOR IN AND FOR OF
+
+let mass1 = [10,20,30,40,50];
+
+
+console.log("use in ");
+for(let key in mass1)
+{
+	console.log(key);
+}
+
+console.log("use of ");
+for(let key of mass1)
+{
+	console.log(key);
+}
+
+
+// SPLIT AND JOIN
+
+let ans = prompt("", "");
+	arrin =[];
+if(ans!=null && ans!=""){
+
+arrin = ans.split(',');
+
+console.log(arrin);
+
+arrin.unshift("hello");
+// изменим и  выведем массив обратно
+
+arrin.join(', ');
+
+alert(arrin);
+}
+
+
+
+let letters = ['c','b','a','f','g','d','x'];
+
+console.log(letters);
+	i=letters.sort();
+
+
+
+console.log(letters);
+console.log(i);
+// SORT NUMBERS WITH ISIDE ALGORITHMS
+
+let arrNum=[1,5,7,3,8,19,2];
+console.log(arrNum);
+
+arrNum.sort(compareNum);
+
+function compareNum(a,b){
+	return a-b;
+}
+
+
+console.log(arrNum);
