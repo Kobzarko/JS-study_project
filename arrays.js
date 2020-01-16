@@ -154,8 +154,6 @@ let letters = ['c','b','a','f','g','d','x'];
 console.log(letters);
 	i=letters.sort();
 
-
-
 console.log(letters);
 console.log(i);
 // SORT NUMBERS WITH ISIDE ALGORITHMS
@@ -165,9 +163,9 @@ console.log(arrNum);
 
 arrNum.sort(compareNum);
 
+// упорядочивает по возрастанию
 function compareNum(a,b){
 	return a-b;
 }
-
 
 console.log(arrNum);

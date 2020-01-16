@@ -1,32 +1,34 @@
 // loops
 
-newFunction();
-let numer = 50;
+// newFunction();
+// let numer = 50;
 
 
 
-function newFunction() {
-    while (numer < 55) {
-        console.log(numer);
-        numer++;
-    }
-}
+// function newFunction() {
+//     while (numer < 55) {
+//         console.log(numer);
+//         numer++;
+//     }
+// }
 
 
-//  do while
-do {
-    console.log(numer);
-    numer++;
-} while (numer < 55);
+// //  do while
+// do {
+//     console.log(numer);
+//     numer++;
+// } while (numer < 55);
 
-// for 
+// // for 
 
-for (let i = 0; i < 10; i++) {
-    if (i == 5) {
-        continue;
-    }
+// for (let i = 0; i < 10; i++) {
+//     if (i == 5) {
+//         continue;
+//     }
 
-    if (i == 7)
-        console.log(i);
-    break;
-}
+//     if (i == 7)
+//         console.log(i);
+//     break;
+// }
+
+
