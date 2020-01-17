@@ -41,7 +41,7 @@ function sum(a, b) {
 // Function Declaration можно использовать во всем скрипте (или блоке кода, если функция объявлена в блоке).
 
 // Function Expression
-let sum = function(a, b) {
+let sum = function (a, b) {
   return a + b;
 };
 
@@ -68,27 +68,31 @@ let sum = function(a, b) {
 // замыкание 
 
 
- function createCounter() {
-   let counter = 0
-   const myFunction = function() {
-     counter = counter + 1
-     return counter
- }
+function createCounter() {
+  let counter = 0
+  const myFunction = function () {
+    counter = counter + 1
+    return counter
+  }
   return myFunction
- }
- const increment = createCounter()
- const c1 = increment()
- const c2 = increment()
- const c3 = increment()
- console.log('example increment', c1, c2, c3)
+}
+const increment = createCounter()
+const c1 = increment()
+const c2 = increment()
+const c3 = increment()
+console.log('example increment', c1, c2, c3)
 
- // тернарный оператор в функциях
+// тернарный оператор в функциях
 
- let age = prompt("Сколько Вам лет?", 18);
+let age = prompt("Сколько Вам лет?", 18);
 
 let welcome = (age < 18) ?
-  function() { alert("Привет!"); } :
-  function() { alert("Здравствуйте!"); };
+  function () {
+    alert("Привет!");
+  } :
+  function () {
+    alert("Здравствуйте!");
+  };
 
 
 //   Функции – это значения. Они могут быть присвоены, скопированы или объявлены в другом месте кода.
@@ -111,13 +115,13 @@ let sum = function(a, b) {
 };
 */
 
-alert( sum(1, 2) ); // 3
+alert(sum(1, 2)); // 3
 
 // тоже что и
 // let double = function(n) { return n * 2 }
 let double = n => n * 2;
 
-alert( double(3) ); // 6
+alert(double(3)); // 6
 
 // Если нет аргументов, указываются пустые круглые скобки:
 
@@ -127,12 +131,12 @@ sayHi();
 
 // Многострочные стрелочные функции
 
-let sum = (a, b) => {  // фигурная скобка, открывающая тело многострочной функции
+let sum = (a, b) => { // фигурная скобка, открывающая тело многострочной функции
   let result = a + b;
   return result; // при фигурных скобках для возврата значения нужно явно вызвать return
 };
 
-alert( sum(1, 2) ); // 3
+alert(sum(1, 2)); // 3
 
 
 // вариант замены пустой функции
@@ -144,8 +148,10 @@ function ask(question, yes, no) {
 
 ask(
   "Вы согласны?",
-  () => alert("Вы согласились."),
-  () => alert("Вы отменили выполнение.")
+  () => alert("Вы согласились."), // заменяем function ()  на пустые скобки
+  () => {
+    return alert("Вы отменили выполнение.");
+  }
 );
 
 // свойства методов
@@ -167,3 +173,32 @@ let ten = "10.7";
 // парсим в число
 console.log(parseInt(ten));
 console.log(parseFloat(ten));
+
+
+// callback functions
+// возможность передать функцию другой функции в качестве аргумента
+
+function first(y) {
+  console.log(1);
+  y();
+}
+
+function second(a, b) {
+  console.log(a * b);
+}
+
+//first(second);
+//second(4, 7);
+
+//first(second(3,4)); // вызовет ошибку т.к. y() not a function
+
+// используем функцию обертку 
+first(function () {
+  second(5, 7);
+})
+
+// или анонимная функция
+
+first(function () {
+  console.log(5 * 5);
+})
