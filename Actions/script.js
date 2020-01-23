@@ -79,4 +79,41 @@ wrapper.removeChild(heart[1]);
 // replace element by another one
 document.body.replaceChild(btn[2], circle[1]);
 
-// 
+//-------metanit-----DOM------metanit------\\
+
+// поиск элементов DOM
+
+let headElem = document.getElementById("header");
+headElem.textContent = 'Find elements'
+document.write(headElem.innerText + " by DOM ");
+
+
+
+let pOne = document.getElementsByTagName("p")[1];
+document.writeln("get text of one paragraph " + pOne.innerText);
+
+// get by class
+let divPar = document.getElementsByClassName('div-par')[0];
+let textPar = document.getElementsByClassName('text-par');
+
+divPar.insertBefore(textPar[1], textPar[0]);
+
+
+// get by name
+
+let pElem = document.getElementsByTagName("p");
+
+for (let i = 0; i < pElem.length; i++) {
+    document.write("Text " + pElem[i].innerText + " " + "<br/>");
+}
+
+// get by selector
+let selElem = document.querySelector(".div-par p");
+document.write(" text by selector " + selElem.innerText + "<br/>");
+
+// get by selectorAll
+let selectAll = document.querySelectorAll("div");
+for (let i = 0; i < selectAll.length; i++) {
+
+    document.writeln((i + 1) + " " + " text from div -  " + selectAll[i].innerText + " " + " <br/>");
+}
