@@ -1,0 +1,50 @@
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: lightgreen;
+  text-align: center;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: blue;
+  border-radius: 50%;
+  box-shadow: 5px 1px 6px black;
+}
+#animate2 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: 350px;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 5px 1px 6px black;
+}
+
+#animate3 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 300px;
+  left: 350px;
+  background-color: purple;
+  border-radius: 50%;
+  box-shadow: 5px 1px 6px black;
+}
+
+#animate4 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 250px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 5px 1px 6px black;
+}
+
+body{
+	background-color: #122334;
+}
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AnimationFromJS_RU</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<p>Нажмите на элемент для того, чтобы посмотреть пример </p>
+	
+
+  <progress id="elem"></progress>
+
+  <script>
+    elem.onclick = function() {
+      animate({
+        duration: 1000,
+        timing: function(timeFraction) {
+          return timeFraction;
+        },
+        draw: function(progress) {
+          elem.style.width = progress * 100 + '%';
+        }
+      });
+    };
+  </script>
+	
+</body>
+</html>
