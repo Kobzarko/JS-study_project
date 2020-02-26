@@ -39,7 +39,7 @@
 let inputUah = document.getElementById('uah');
 let inputUsd = document.getElementById('usd');
 
-inputUah.addEventListener('input', ()=> {
+/*inputUah.addEventListener('input', ()=> {
 	let request = new XMLHttpRequest();
 	//requst.open(method, url, async, login , pass);
 	request.open('GET', 'current.json');
@@ -63,6 +63,40 @@ inputUah.addEventListener('input', ()=> {
 			inputUsd.value = "Error server";
 		}
 
-	})
+	});
 
-})
+});*/
+
+inputUah.addEventListener('input', () => {
+	function catchData(){
+		return new Promise(function(resolve, reject){
+			let request = new XMLHttpRequest();
+			//requst.open(method, url, async, login , pass);
+			request.open('GET', 'current.json');
+			// настройка запроса
+			request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+			// отправка запуск запроса
+			request.send();
+
+			request.onload = ()=>{
+				if(request.readyState === 4){
+					if(request.status == 200){
+						resolve(this.responce)
+					}else{
+						reject();
+					}
+				}
+			}
+
+		});
+	};
+
+	catchData()
+	.then(responce => {
+		console.log(responce);
+		let data = JSON.parse(responce);
+		inputUsd.value = inputUah.value / data.usd;
+	})
+	.then(()=>{console.log(5000)})
+	.catch(()=>inputUsd.value = "Network Error")
+});
