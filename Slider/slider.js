@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', function(){
 	function currentSlide(n){
 		showSlides(slideIndex =n);
 	}
-	// уменьшает индекса слайда
+	// уменьшает индекс слайда
 	prev.addEventListener('click', function(){
 		plusSlides(-1);
 	});
